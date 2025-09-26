@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACoS Quantum | AI-Powered Amazon KDP Profit Maximization Suite</title>
+    <meta name="description" content="The world's first predictive ACoS optimization platform. Go beyond analytics into profit prediction and autonomous optimization.">
+    
+    <!-- Ultra Premium Assets -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600,500,400,300&f[]=satoshi@900,700,500,300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --secondary: #00C4B4;
+            --accent: #FF4D8D;
+            --dark: #0A0F1C;
+            --darker: #060913;
+            --darkest: #020308;
+            --light: #FFFFFF;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Satoshi', system-ui, sans-serif;
+            line-height: 1.8;
+            color: var(--light);
+            background: var(--darkest);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 77, 141, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 196, 180, 0.05) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        
+        /* Ultra Premium Navigation */
+        .navbar {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(6, 9, 19, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .logo {
+            font-family: 'Clash Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: 'β';
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            font-size: 0.8rem;
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+        
+        /* Quantum Hero Section */
+        .quantum-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 200px 0 100px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quantum-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 196, 180, 0.1);
+            color: var(--secondary);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 196, 180, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .badge-pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        h1 {
+            font-family: 'Clash Grotesk', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* Quantum CTA */
+        .quantum-cta {
+            background: var(--glass);
+            backdrop-filter: blur(40px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-glow {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--gradient);
+            opacity: 0.03;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .form-group {
+            margin-bottom: 35px;
+            position: relative;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+        
+        .quantum-input {
+            width: 100%;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            font-family: inherit;
+        }
+        
+        .quantum-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .quantum-btn {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Clash Grotesk', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quantum-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .quantum-btn:hover::before {
+            left: 100%;
+        }
+        
+        .quantum-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        /* Quantum Features */
+        .quantum-features {
+            padding: 200px 0;
+            position: relative;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-top: 100px;
+        }
+        
+        .feature-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature-title {
+            font-family: 'Clash Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        /* Quantum Stats */
+        .quantum-stats {
+            padding: 150px 0;
+            background: radial-gradient(circle at center, rgba(255, 77, 141, 0.05) 0%, transparent 70%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            position: relative;
+        }
+        
+        .stat-number {
+            font-family: 'Clash Grotesk', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 { font-size: 4rem; }
+            .container { padding: 0 40px; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .container { padding: 0 20px; }
+            .quantum-hero { padding: 150px 0 50px; }
+            .quantum-cta { padding: 40px 30px; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quantum Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">ACoS Quantum</div>
+        </div>
+    </nav>
+
+    <!-- Quantum Hero -->
+    <section class="quantum-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="quantum-badge">
+                    <div class="badge-pulse"></div>
+                    LIMITED BETA ACCESS • 47 SPOTS REMAINING
+                </div>
+                
+                <h1>Predict Your Profit Before You Spend a Dime</h1>
+                <p class="hero-subtitle">
+                    The world's first predictive ACoS optimization platform. 
+                    Using quantum-inspired algorithms to forecast Amazon Ad performance 
+                    with 94.7% accuracy before campaign launch.
+                </p>
+                
+                <div class="quantum-cta">
+                    <div class="cta-glow"></div>
+                    <form id="quantumForm" action="https://formspree.io/f/YOUR_QUANTUM_ID" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Enterprise Email Address</label>
+                            <input type="email" name="email" class="quantum-input" 
+                                   placeholder="ceo@yourpublishingempire.com" required>
+                        </div>
+                        <button type="submit" class="quantum-btn">
+                            <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
+                        </button>
+                    </form>
+                    <p style="text-align: center; margin-top: 25px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
+                        🔒 Vetted applicants only • 24-hour response time • No credit card required
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Features -->
+    <section class="quantum-features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Predictive Intelligence</h3>
+                    <p>Our quantum algorithms analyze 247 data points to forecast campaign performance with unprecedented accuracy before you spend a single dollar.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Autonomous Optimization</h3>
+                    <p>Self-learning AI continuously adjusts bids, targets, and budgets across your entire KDP portfolio while you focus on writing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌌</div>
+                    <h3 class="feature-title">Competitive Quantum Leap</h3>
+                    <p>See 3 months into your competitors' future strategies. Identify emerging trends before they become mainstream.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Stats -->
+    <section class="quantum-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">$14.7M</div>
+                    <div class="stat-label">Ad Spend Optimized</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">94.7%</div>
+                    <div class="stat-label">Prediction Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3.2x</div>
+                    <div class="stat-label">Average ROI Increase</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">47</div>
+                    <div class="stat-label">Beta Spots Remaining</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Quantum-grade form handling
+        document.getElementById('quantumForm').addEventListener('submit', function(e) {
+            const email = document.querySelector('.quantum-input').value;
+            const button = document.querySelector('.quantum-btn');
+            const domain = email.split('@')[1];
+            
+            // Enterprise email validation
+            const freeDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
+            if (freeDomains.includes(domain)) {
+                e.preventDefault();
+                alert('Please use your professional publishing email address for beta consideration.');
+                return;
+            }
+            
+            // Quantum loading state
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING BETA APPLICATION...';
+            button.disabled = true;
+            
+            // Simulate AI vetting process
+            setTimeout(() => {
+                console.log('Quantum lead vetted:', email);
+                // Form will submit naturally after validation
+            }, 2000);
+        });
+        
+        // Advanced animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.quantum-hero');
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            });
+            
+            // Intersection Observer for advanced animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px) scale(0.9)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                observer.observe(card);
+            });
+        });
+        
+        // Real-time spot counter
+        let spots = 47;
+        setInterval(() => {
+            if (Math.random() > 0.7 && spots > 30) {
+                spots--;
+                document.querySelector('.quantum-badge').innerHTML = 
+                    `<div class="badge-pulse"></div>LIMITED BETA ACCESS • ${spots} SPOTS REMAINING`;
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
