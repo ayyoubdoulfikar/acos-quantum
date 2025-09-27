@@ -6,9 +6,8 @@
     <title>ACoS Quantum | AI-Powered Amazon KDP Profit Maximization Suite</title>
     <meta name="description" content="The world's first predictive ACoS optimization platform. Go beyond analytics into profit prediction and autonomous optimization.">
     
-    <!-- RELIABLE FONTS THAT ACTUALLY WORK -->
+    <!-- RELIABLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -38,28 +37,22 @@
         
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             color: var(--light);
             background: var(--darkest);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 77, 141, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(0, 196, 180, 0.05) 0%, transparent 50%);
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 20px;
         }
         
-        /* Premium Navigation */
+        /* Navigation */
         .navbar {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 25px 0;
             position: fixed;
             top: 0;
             width: 100%;
@@ -70,42 +63,26 @@
         }
         
         .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
         }
         
-        .logo::after {
-            content: 'β';
-            position: absolute;
-            top: -10px;
-            right: -25px;
-            font-size: 0.8rem;
-            background: var(--accent);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-        }
-        
-        /* Hero Section */
+        /* Hero Section - FIXED LAYOUT */
         .quantum-hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            padding: 150px 0 100px;
+            padding: 120px 0 60px;
             text-align: center;
         }
         
         .hero-content {
-            max-width: 1000px;
+            width: 100%;
+            max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
         
         .quantum-badge {
@@ -114,14 +91,12 @@
             gap: 10px;
             background: rgba(0, 196, 180, 0.1);
             color: var(--secondary);
-            padding: 14px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border: 1px solid rgba(0, 196, 180, 0.3);
-            backdrop-filter: blur(10px);
-            font-family: 'Inter', sans-serif;
         }
         
         .badge-pulse {
@@ -138,86 +113,61 @@
         }
         
         h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            line-height: 1.6;
+            margin-bottom: 40px;
+            line-height: 1.5;
         }
         
-        /* CTA Section */
+        /* CTA Section - FIXED */
         .quantum-cta {
             background: var(--glass);
-            backdrop-filter: blur(40px);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 60px;
-            max-width: 600px;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-glow {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--gradient);
-            opacity: 0.03;
-            animation: rotate 20s linear infinite;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         
         .form-group {
-            margin-bottom: 25px;
-            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
         }
         
         .form-label {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--light);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .quantum-input {
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
+            border-radius: 10px;
             color: var(--light);
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-family: inherit;
         }
         
         .quantum-input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
             background: rgba(255, 255, 255, 0.05);
         }
         
@@ -226,111 +176,97 @@
             background: var(--gradient);
             color: white;
             border: none;
-            padding: 20px;
-            font-size: 1.2rem;
+            padding: 16px;
+            font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            margin-top: 10px;
+            font-family: inherit;
         }
         
-        .quantum-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
+        .disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 15px;
         }
         
-        /* Features Grid */
+        /* Features Section - FIXED LAYOUT */
         .quantum-features {
-            padding: 120px 0;
-            position: relative;
+            padding: 80px 0;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .feature-card {
             background: var(--glass);
-            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
         
         .feature-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--light);
         }
         
         .feature-card p {
             color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
-        /* Stats Section */
+        /* Stats Section - FIXED */
         .quantum-stats {
-            padding: 100px 0;
-            background: radial-gradient(circle at center, rgba(255, 77, 141, 0.05) 0%, transparent 70%);
+            padding: 80px 0;
+            background: rgba(255, 77, 141, 0.05);
         }
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
             text-align: center;
         }
         
         .stat-item {
-            position: relative;
+            padding: 20px;
         }
         
         .stat-number {
-            font-family: 'Inter', sans-serif;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
-            font-weight: 400;
         }
         
-        /* Mobile Responsive */
+        /* Mobile Fixes */
         @media (max-width: 768px) {
             .container {
-                padding: 0 20px;
+                padding: 0 15px;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
@@ -338,11 +274,7 @@
             }
             
             .quantum-cta {
-                padding: 40px 30px;
-            }
-            
-            .quantum-hero {
-                padding: 120px 0 60px;
+                padding: 30px 20px;
             }
             
             .features-grid {
@@ -351,7 +283,22 @@
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Ensure proper spacing */
+        section {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-content > * {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -380,8 +327,7 @@
                 </p>
                 
                 <div class="quantum-cta">
-                    <div class="cta-glow"></div>
-                    <form id="quantumForm" action="https://formspree.io/f/mkgqogaq" method="POST">
+                    <form id="quantumForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                         <div class="form-group">
                             <label class="form-label">Professional Email Address</label>
                             <input type="email" name="email" class="quantum-input" 
@@ -391,9 +337,7 @@
                             <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
                         </button>
                     </form>
-                    <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
-                        🔒 Vetted applicants only • 24-hour response time
-                    </p>
+                    <p class="disclaimer">🔒 Vetted applicants only • 24-hour response time</p>
                 </div>
             </div>
         </div>
@@ -449,41 +393,18 @@
     </section>
 
     <script>
-        // Form handling
         document.getElementById('quantumForm').addEventListener('submit', function(e) {
             const email = document.querySelector('.quantum-input').value;
             const button = document.querySelector('.quantum-btn');
             
             if (!email.includes('@') || !email.includes('.')) {
                 e.preventDefault();
-                alert('Please enter a valid professional email address for beta consideration.');
+                alert('Please enter a valid professional email address.');
                 return;
             }
             
-            // Loading state
-            button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING APPLICATION...';
+            button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING...';
             button.disabled = true;
-            
-            console.log('Beta application submitted:', email);
-        });
-        
-        // Simple animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.feature-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s ease';
-                observer.observe(card);
-            });
         });
     </script>
 </body>
