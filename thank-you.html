@@ -105,4 +105,29 @@
         </p>
     </div>
 </body>
+    <script>
+// Get email from URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const userEmail = urlParams.get('email');
+
+if (userEmail) {
+    console.log('Captured email:', userEmail);
+    // You can display it or use it for tracking
+    document.getElementById('userEmailDisplay').textContent = userEmail;
+}
+
+// Optional: Send to your email or webhook
+if (userEmail) {
+    fetch('https://formspree.io/f/mkgqogaq', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: userEmail,
+            _subject: 'ACoS Quantum Lead'
+        })
+    }).catch(console.error);
+}
+</script>
 </html>
