@@ -183,6 +183,18 @@
             cursor: pointer;
             margin-top: 10px;
             font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .quantum-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .quantum-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
         }
         
         .disclaimer {
@@ -209,6 +221,11 @@
             border-radius: 15px;
             padding: 30px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
         
         .feature-icon {
@@ -290,16 +307,6 @@
                 font-size: 2rem;
             }
         }
-
-        /* Ensure proper spacing */
-        section {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .hero-content > * {
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
@@ -327,19 +334,17 @@
                 </p>
                 
                 <div class="quantum-cta">
-                   <form action="https://https://formspree.io/f/mkgqogaq" method="POST">
-    <input type="hidden" name="_subject" value="New ACoS Quantum Applicant">
-    <input type="hidden" name="_next" value="https://ayyoubdoulfikar.github.io/acos-quantum/thank-you.html">
-    
-    <div class="form-group">
-        <label class="form-label">Professional Email Address</label>
-        <input type="email" name="email" class="quantum-input" required>
-    </div>
-    
-    <button type="submit" class="quantum-btn">
-        <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
-    </button>
-</form>
+                    <form id="quantumForm">
+                        <div class="form-group">
+                            <label class="form-label">Professional Email Address</label>
+                            <input type="email" id="userEmail" class="quantum-input" 
+                                   placeholder="you@yourpublishingbusiness.com" required>
+                        </div>
+
+                        <button type="submit" class="quantum-btn">
+                            <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
+                        </button>
+                    </form>
                     <p class="disclaimer">🔒 Vetted applicants only • 24-hour response time</p>
                 </div>
             </div>
@@ -397,17 +402,49 @@
 
     <script>
         document.getElementById('quantumForm').addEventListener('submit', function(e) {
-            const email = document.querySelector('.quantum-input').value;
+            e.preventDefault();
+            
+            const email = document.getElementById('userEmail').value;
             const button = document.querySelector('.quantum-btn');
             
+            // Email validation
             if (!email.includes('@') || !email.includes('.')) {
-                e.preventDefault();
                 alert('Please enter a valid professional email address.');
                 return;
             }
             
+            // Show loading state
+            const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING...';
             button.disabled = true;
+            
+            // Store the email
+            localStorage.setItem('acos_lead_email', email);
+            console.log('Lead captured:', email);
+            
+            // Redirect after a brief delay to show loading state
+            setTimeout(() => {
+                window.location.href = 'thank-you.html';
+            }, 1500);
+        });
+        
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
         });
     </script>
 </body>
