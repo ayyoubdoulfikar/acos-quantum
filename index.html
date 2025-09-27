@@ -334,21 +334,58 @@
                 </p>
                 
                 <div class="quantum-cta">
-                    <form action="https://formspree.io/f/mkgqogaq" method="POST" onsubmit="showLoading()">
-    <input type="hidden" name="_subject" value="🚀 New ACoS Quantum Beta Applicant">
-    <input type="hidden" name="_next" value="https://ayyoubdoulfikar.github.io/acos-quantum/thank-you.html" />
-    <input type="hidden" name="_language" value="en" />
-    
-    <div class="form-group">
-        <label class="form-label">Professional Email Address</label>
-        <input type="email" name="email" class="quantum-input" 
-               placeholder="you@yourpublishingbusiness.com" required>
-    </div>
+    <form id="quantumForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+            <label class="form-label">Professional Email Address</label>
+            <input type="email" id="userEmail" class="quantum-input" 
+                   placeholder="you@yourpublishingbusiness.com" required>
+        </div>
 
-    <button type="submit" class="quantum-btn" id="submitBtn">
-        <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
-    </button>
-</form>
+        <button type="submit" class="quantum-btn" id="submitBtn">
+            <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
+        </button>
+    </form>
+    <p class="disclaimer">🔒 Vetted applicants only • 24-hour response time</p>
+</div>
+
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('userEmail').value;
+    const button = document.getElementById('submitBtn');
+    
+    // Validation
+    if (!email.includes('@') || !email.includes('.')) {
+        alert('Please enter a valid professional email address.');
+        return;
+    }
+    
+    // Show loading state
+    button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING...';
+    button.disabled = true;
+    
+    // Submit to Formspree in background
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('_subject', '🚀 New ACoS Quantum Beta Applicant');
+    
+    // Don't wait for response - just fire and forget
+    fetch('https://formspree.io/f/mkgqogaq', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Important: prevents CORS issues
+    }).catch(error => {
+        console.log('Formspree submission (background):', error);
+        // We don't care if it fails - still redirect user
+    });
+    
+    // Redirect immediately to thank you page
+    setTimeout(() => {
+        window.location.href = 'thank-you.html';
+    }, 1000);
+}
+</script>
                     <p class="disclaimer">🔒 Vetted applicants only • 24-hour response time</p>
                 </div>
             </div>
