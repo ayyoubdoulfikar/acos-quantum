@@ -334,14 +334,17 @@
                 </p>
                 
                 <div class="quantum-cta">
-                    <form id="quantumForm">
+                    <form action="https://formspree.io/f/mkgqogaq" method="POST" onsubmit="showLoading()">
+                        <input type="hidden" name="_subject" value="🚀 New ACoS Quantum Beta Applicant">
+                        <input type="hidden" name="_next" value="https://ayyoubdoulfikar.github.io/acos-quantum/thank-you.html">
+                        
                         <div class="form-group">
                             <label class="form-label">Professional Email Address</label>
-                            <input type="email" id="userEmail" class="quantum-input" 
+                            <input type="email" name="email" class="quantum-input" 
                                    placeholder="you@yourpublishingbusiness.com" required>
                         </div>
 
-                        <button type="submit" class="quantum-btn">
+                        <button type="submit" class="quantum-btn" id="submitBtn">
                             <i class="fas fa-lock-open"></i> REQUEST BETA ACCESS
                         </button>
                     </form>
@@ -401,32 +404,14 @@
     </section>
 
     <script>
-        document.getElementById('quantumForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('userEmail').value;
-            const button = document.querySelector('.quantum-btn');
-            
-            // Email validation
-            if (!email.includes('@') || !email.includes('.')) {
-                alert('Please enter a valid professional email address.');
-                return;
-            }
-            
-            // Show loading state
-            const originalText = button.innerHTML;
+        function showLoading() {
+            const button = document.getElementById('submitBtn');
             button.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSING...';
             button.disabled = true;
             
-            // Store the email
-            localStorage.setItem('acos_lead_email', email);
-            console.log('Lead captured:', email);
-            
-            // Redirect after a brief delay to show loading state
-            setTimeout(() => {
-                window.location.href = 'thank-you.html';
-            }, 1500);
-        });
+            // Form will auto-submit and redirect via Formspree's _next parameter
+            return true;
+        }
         
         // Simple animation on scroll
         document.addEventListener('DOMContentLoaded', function() {
